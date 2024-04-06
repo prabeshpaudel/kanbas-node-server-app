@@ -9,7 +9,9 @@ import AssignmentRoutes from './Kanbas/assignments/routes.js';
 import UserRoutes from './Users/routes.js';
 import session from 'express-session';
 
-mongoose.connect('mongodb://localhost:27017/kanbas');
+const DB_CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
+
+mongoose.connect(process.env.DB_CONNECTION_STRING || 'mongodb://localhost:27017/kanbas');
 const app = express();
 app.use(
     cors({
