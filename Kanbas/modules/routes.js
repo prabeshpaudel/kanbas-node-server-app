@@ -1,3 +1,32 @@
+// import * as dao from "./dao.js";
+
+// export default function ModuleRoutes(app) {
+//     app.delete("/api/modules/:mid", (req, res) => {
+//         const { mid } = req.params;
+//         dao.deleteModule(mid)
+//             .then(() => res.sendStatus(200));
+//     });
+
+//     app.put("/api/modules/:mid", (req, res) => {
+//         const { mid } = req.params;
+//         dao.updateModule(mid, req.body)
+//             .then(() => res.sendStatus(204));
+//     });
+
+//     app.post("/api/courses/:cid/modules", (req, res) => {
+//         const { cid } = req.params;
+//         dao.createModule(cid, req.body)
+//             .then((module) => res.send(module));
+//     });
+
+//     app.get("/api/courses/:cid/modules", (req, res) => {
+//         const { cid } = req.params;
+//     console.log("cid", cid);
+//         dao.findModuleById(cid)
+//             .then((modules) => res.send(modules));
+//     });
+// }
+
 import db from "../Database/index.js";
 
 function ModuleRoutes(app) {
