@@ -21,14 +21,14 @@ app.use(
 );
 app.use(express.json());
 const sessionOptions = {
-    secret: process.env.SESSION_SECRET,
+    secret: "secret",
     resave: false,
     saveUninitialized: false,
     proxy: true,
     cookie: {
         sameSite: "none",
         secure: true,
-        domain: "kanbas-node-server-app-sp24-cs5610-02-l55v.onrender.com",
+        domain: "kanbas-node-server-app-1-ic1i.onrender.com",
     }
 };
 if (process.env.NODE_ENV !== "development") {
