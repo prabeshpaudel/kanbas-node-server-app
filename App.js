@@ -7,11 +7,14 @@ import CourseRoutes from './Kanbas/courses/routes.js';
 import ModuleRoutes from './Kanbas/modules/routes.js';
 import AssignmentRoutes from './Kanbas/assignments/routes.js';
 import UserRoutes from './Users/routes.js';
+import QuizRoutes from "./Kanbas/quizzes/routes.js";
+import QuestionRoutes from "./Kanbas/questions/routes.js";
 import session from 'express-session';
 
 const DB_CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
 
 mongoose.connect(process.env.DB_CONNECTION_STRING || 'mongodb://localhost:27017/kanbas');
+// mongoose.connect("mongodb+srv://giuseppi:supersecretpassword@kanbas.bpl8vgp.mongodb.net/Kanbas?retryWrites=true&w=majority&appName=Kanbas");
 const app = express();
 app.use(
     cors({
@@ -44,4 +47,6 @@ ModuleRoutes(app);
 AssignmentRoutes(app);
 Lab5(app);
 UserRoutes(app);
+QuizRoutes(app);
+QuestionRoutes(app);
 app.listen(process.env.PORT || 4000);
