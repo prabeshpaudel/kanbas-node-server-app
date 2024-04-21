@@ -48,7 +48,3 @@ const quizzesSchema = new mongoose.Schema(
   { collection: "quizzes" }
 );
 export default quizzesSchema;
-
-
-
-

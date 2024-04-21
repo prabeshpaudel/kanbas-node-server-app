@@ -1,5 +1,4 @@
 import model from "./model.js";
-// export const findAllQuizzes = () => QuizModel.find()
 
 export const findQuizzesByCourseId = (courseId) => model.find({course: courseId})
 
@@ -10,11 +9,10 @@ export const createQuiz = (quiz) => {
   return model.create(quiz);
 };
 
+export const updateQuiz = (quizId, quiz) => {
+    return model.updateOne({ _id: quizId }, { $set: quiz });
+  };
+
 export const deleteQuiz = (quizId) => {
   return model.deleteOne({ _id: quizId });
 };
-
-export const updateQuiz = (quizId, quiz) => {
-  return model.updateOne({ _id: quizId }, { $set: quiz });
-};
-
